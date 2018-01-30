@@ -14,13 +14,19 @@ public class TicTacToe {
 		System.out.println("Are you playing the computer \"yes\" or \"no\"");
 		String str = scan.nextLine();
 
+		Player player1 = new Player(1);
+		
 		if (str.toLowerCase().equals("yes")) {
-			Player player = new Player(1);
 			Computer comp = new Computer(2);
+		} else {
+			Player player2 = new Player(2);
 		}
-		while (win == false) {
+		
+		while (win == false) {// print board then do player1's turn then computer's or player2's
 
 		}
 
+		
+		
 	}
 }
