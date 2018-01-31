@@ -8,7 +8,7 @@
 public class Computer extends Player
 {
     int row, col, team, o, spot;
-    public Computer(int t, Board b){
+    public Computer(int t, Board board1){
         team = t;
     }
 
