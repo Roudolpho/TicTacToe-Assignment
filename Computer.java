@@ -1,4 +1,3 @@
- 
 
 /**
  * Write a description of class computer here.
@@ -9,7 +8,7 @@
 public class Computer extends Player
 {
     int row, col, team, o, spot;
-    public Computer(int t){
+    public Computer(int t, Board b){
         team = t;
     }
 
@@ -23,68 +22,92 @@ public class Computer extends Player
     }
 
     public void getSpaceHard(int[][] asd){
-
         row = -1;
         col = -1;
         checkRows(asd);
-        if(row != -1 && col != -1)
+        if(row == -1 && col == -1)
             checkColumns(asd);
-
+        if(row == -1 && col == -1)
+            checkDiagonals(asd);
+        if(row == -1 && col == -1)
+            checkDiagonals2(asd);
+        if(row == -1 && col == -1)
+            getSpaceEasy(asd);
+        
     }
 
     /*should check for any possible crosses though columns*/
     public void checkColumns(int[][] asd){
         o = 0;
+        spot = -1;
         for(int i = 0; i<=2;i++)
             for(int c = 0;c<=2;c++){
-                if(asd[i][c] == 1)
+                if(asd[i][c] == 1){
                     o += 1;
-                if(o == 2){
-                    o = i;
+                } else if(asd[i][c] == 0)
+                    spot = c;
+                if(o == 2 && spot != -1){
+                    row = i;
+                    col = spot;
                     c = 2;
                     i = 2;
                 }
-            }
-        for(int x=0;x<=2;x++)
-            if(asd[o][x] == 0){
-                row = o;
-                col = x;
             }
     }
 
     /*should check for any possible crosses though rows*/
     public void checkRows(int[][] asd){
         o = 0;
+        spot = -1;
         for(int c = 0; c<=2;c++)
             for(int i = 0;i<=2;i++){
-                if(asd[i][c] == 1)
+                if(asd[i][c] == 1){
                     o += 1;
-                if(o == 2){
-                    o = c;
+                } else if(asd[i][c] == 0)
+                    spot = c;
+                if(o == 2 && spot != -1){
+                    row = spot;
+                    col = c;
                     c = 2;
                     i = 2;
                 }
             }
-        for(int x=0;x<=2;x++)
-            if(asd[x][o] == 0){
-                row = x;
-                col = o;
-            }
     }
-    
+
     public void checkDiagonals(int[][] asd){
         o = 0;
-        spot = 0;
+        spot = -1;
         for(int c = 0; c<=2;c++)
             for(int i = 2;i>=0;i++){
                 if(asd[i][c] == 1){
                     o += 1;
                 } else if(asd[i][c] == 0)
-                if(o == 2){
-                    
+                    spot = i;
+                if(o == 2 && spot != -1){
+                    row = i;
+                    col = c;
+                    c = 2;
+                    i = 0;
                 }
             }
-        
+    }
+    
+     public void checkDiagonals2(int[][] asd){
+        o = 0;
+        spot = -1;
+        for(int i = 0; i<=2;i++)
+            for(int c = 2;c>=0;c++){
+                if(asd[i][c] == 1){
+                    o += 1;
+                } else if(asd[i][c] == 0)
+                    spot = i;
+                if(o == 2 && spot != -1){
+                    row = i;
+                    col = c;
+                    c = 0;
+                    i = 2;
+                }
+            }
     }
 
     public int getX(){
