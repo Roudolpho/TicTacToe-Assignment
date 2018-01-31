@@ -12,6 +12,10 @@ public class Player {
 	private Scanner scan = new Scanner(System.in);
 	private Board board = new Board();
 
+	Player() {
+
+	}
+
 	Player(int t, Board board1) {// Sets up a player with a team.
 		team = t;
 		if (t == 1)
