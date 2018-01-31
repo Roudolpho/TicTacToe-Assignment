@@ -1,3 +1,5 @@
+package src;
+
 
 /**
  * This Class is the class that makes a player.

@@ -1,3 +1,4 @@
+package src;
 
 /**
  * Write a description of class computer here.
@@ -7,11 +8,11 @@
  */
 public class Computer
 {
-    int row, col, team;
+    int row, col, team, o;
     public Computer(int t){
         team = t;
     }
-    
+
     public void getSpaceEasy(int[][] asd){
         row = -1;
         col = -1;
@@ -20,17 +21,17 @@ public class Computer
             col = (int)(3*Math.random());    
         } while(asd[row][col]!=0);
     }
-    
+
     public void getSpaceHard(int[][] asd){
-        
+
         row = -1;
         col = -1;
         checkRows(asd);
         if(row != -1 && col != -1)
             checkColumns(asd);
-        
+
     }
-    
+
     /*should check for any possible crosses though columns*/
     public void checkColumns(int[][] asd){
         for(int i = 0; i<=2;i++)
@@ -42,23 +43,29 @@ public class Computer
                             col = x;
                         }
     }
-    
+
     /*should check for any possible crosses though rows*/
     public void checkRows(int[][] asd){
+        o = 0;
         for(int c = 0; c<=2;c++)
-            for(int i = 0;i<=1;i++)
-                if(asd[i][c] != 0 && asd[i+1][c] != 0)
-                    for(int x=0;x<=2;x++)
+            for(int i = 0;i<=2;i++){
+                if(asd[i][c] == 1)
+                    o += 1;
+                if(o == 2){
+                    
+                }
+            }
+        for(int x=0;x<=2;x++)
                         if(asd[x][c] == 0){
                             row = x;
                             col = c;
                         }
     }
-    
+
     public int getX(){
         return row;
     }
-    
+
     public int getY(){
         return col;
     }
