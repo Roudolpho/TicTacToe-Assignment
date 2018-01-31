@@ -7,8 +7,6 @@
  */
 import java.util.*;
 
-import javax.swing.JFrame;
-
 public class TicTacToe {
 	public static void main(String args[]) {
 		Scanner scan = new Scanner(System.in);
@@ -24,7 +22,9 @@ public class TicTacToe {
 		Player player2;
 
 		if (str.toLowerCase().equals("yes")) {
-			player2 = new Computer(2, board);
+			System.out.println("What level of the computer ar you playeing easy(1) or hard(2)"); 
+			int lvl = scan.nextInt();
+			player2 = new Computer(2, board, lvl);
 		} else {
 			player2 = new Player(2, board);
 		}
@@ -44,6 +44,6 @@ public class TicTacToe {
 		}
 
 		System.out.println("Team " + winningTeam + " won");
-
+		scan.close();
 	}
 }

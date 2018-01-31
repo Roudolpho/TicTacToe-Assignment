@@ -8,7 +8,7 @@
 public class Computer extends Player
 {
     int row, col, team, o, spot;
-    public Computer(int t, Board board1){
+    public Computer(int t, Board board1, int level){
         team = t;
         if (t == 1)
 			teamstr = "one";
@@ -16,14 +16,16 @@ public class Computer extends Player
 			teamstr = "two";
 		board = board1;
     }
-
-    public void getSpaceEasy(int[][] asd){
+    @Override public void TakeTurn() {
+    	//this should check for if computer is set to easy or hard and then takes a turn. 
+    }
+    public void getSpaceEasy(int[][] asd){ //I don't think that you need to call the board each time because in board.makemove it uses the board itself. 
         row = -1;
         col = -1;
         do{
             row = (int)(3*Math.random());
             col = (int)(3*Math.random());    
-        } while(asd[row][col]!=0);
+        } while(asd[row][col]!=0); //board.makemove() now returns a boolean if it makes a move for you so you can use board.makemove to both check if a move is possible and make the move at the same time. 
     }
 
     public void getSpaceHard(int[][] asd){
@@ -41,7 +43,7 @@ public class Computer extends Player
         
     }
 
-    /*should check for any possible crosses though columns*/
+    /*should check for any possible crosses through columns*/
     public void checkColumns(int[][] asd){
         o = 0;
         spot = -1;
@@ -60,7 +62,7 @@ public class Computer extends Player
             }
     }
 
-    /*should check for any possible crosses though rows*/
+    /*should check for any possible crosses through rows*/
     public void checkRows(int[][] asd){
         o = 0;
         spot = -1;

@@ -13,7 +13,6 @@ public class Player {
 	public Board board = new Board();
 
 	Player() {
-
 	}
 
 	Player(int t, Board board1) {// Sets up a player with a team.
