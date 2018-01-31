@@ -10,6 +10,11 @@ public class Computer extends Player
     int row, col, team, o, spot;
     public Computer(int t, Board board1){
         team = t;
+        if (t == 1)
+			teamstr = "one";
+		if (t == 2)
+			teamstr = "two";
+		board = board1;
     }
 
     public void getSpaceEasy(int[][] asd){
