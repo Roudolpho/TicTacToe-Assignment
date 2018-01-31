@@ -31,5 +31,6 @@ public class Player {
 		
 		board.makeMove(x, y, team);
 	}
+	
 
 }
