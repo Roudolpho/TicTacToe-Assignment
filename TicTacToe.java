@@ -19,31 +19,20 @@ public class TicTacToe {
 		String str = scan.nextLine();
 		
 		Player player1 = new Player(1, board);
-		
+		int plyrs;
+		Player player2;
 		if (str.toLowerCase().equals("yes")) {
-			Computer comp = new Computer(2);
-			int plyrs = 1;
+			player2 = new Computer(2);
+			plyrs = 1;
 		} else {
-			Player player2 = new Player(2, board);
-			int plyrs = 2;
+			player2 = new Player(2, board);
+			plyrs = 2;
 		}
 		boolean win;
 		int winningTeam;
 		while (win == false) {// print board then do player1's turn then computer's or player2's
 			
 			if(plyrs == 1) {
-				player1.TakeTurn();
-				if(board.checkVictory()) {
-					win = true;
-					winningTeam = 1;
-				}
-				comp.takeTurn();
-				if(board.checkVictory()) {
-					win = true;
-					winningTeam = 2;
-				}
-			}
-			else {
 				player1.TakeTurn();
 				if(board.checkVictory()) {
 					win = true;
@@ -56,12 +45,5 @@ public class TicTacToe {
 				}
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
 	}
 }

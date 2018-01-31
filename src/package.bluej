@@ -5,8 +5,13 @@ package.divider.horizontal=0.6
 package.divider.vertical=0.676
 package.editor.height=331
 package.editor.width=670
+<<<<<<< HEAD
 package.editor.x=673
 package.editor.y=169
+=======
+package.editor.x=12
+package.editor.y=12
+>>>>>>> 4adc23c032e5dd9c4fe3dfe7072f0dee7ae6b33b
 package.frame.height=600
 package.frame.width=800
 package.numDependencies=0
