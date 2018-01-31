@@ -1,5 +1,3 @@
- 
-
 
 /**
  * TicTacToe AP Computer Science A Assignment
@@ -9,41 +7,44 @@
  */
 import java.util.*;
 
+import javax.swing.JFrame;
+
 public class TicTacToe {
 	public static void main(String args[]) {
 		Scanner scan = new Scanner(System.in);
-		
+		JFrame screen = new Visuals();
 		Board board = new Board();
+		
+		screen.setUpTicTacToe();
 		
 		System.out.println("Are you playing the computer \"yes\" or \"no\"");
 		String str = scan.nextLine();
 		
 		Player player1 = new Player(1, board);
-		int plyrs;
 		Player player2;
+		
 		if (str.toLowerCase().equals("yes")) {
 			player2 = new Computer(2);
-			plyrs = 1;
 		} else {
 			player2 = new Player(2, board);
-			plyrs = 2;
 		}
 		boolean win;
 		int winningTeam;
 		while (win == false) {// print board then do player1's turn then computer's or player2's
-			
-			if(plyrs == 1) {
-				player1.TakeTurn();
-				if(board.checkVictory()) {
-					win = true;
-					winningTeam = 1;
-				}
-				player2.TakeTurn();
-				if(board.checkVictory()) {
-					win = true;
-					winningTeam = 2;
-				}
+			player1.TakeTurn();
+			if(board.checkVictory()) {
+				win = true;
+				winningTeam = 1;
 			}
+			player2.TakeTurn();
+			if(board.checkVictory()) {
+				win = true;
+				winningTeam = 2;
+			}
+		}
+		
+		
+		
 		}
 	}
 }

@@ -1,5 +1,3 @@
- 
-
 
 /**
  * This Class is the class that makes a player.
@@ -28,9 +26,8 @@ public class Player {
 		System.out.println("Please input board coordinates as integers, x first then y");
 		int x = scan.nextInt() - 1;
 		int y = scan.nextInt() - 1;
-		
+
 		board.makeMove(x, y, team);
 	}
-	
 
 }
