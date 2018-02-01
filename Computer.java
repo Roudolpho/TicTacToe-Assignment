@@ -30,8 +30,6 @@ public class Computer extends Player
     }
 
     public void getSpaceEasy(){ //I don't think that you need to call the board each time because in board.makemove it uses the board itself. 
-        row = -1;
-        col = -1;
         do{
             row = (int)(3*Math.random());
             col = (int)(3*Math.random());    
@@ -39,8 +37,6 @@ public class Computer extends Player
     }
 
     public void getSpaceHard(){
-        row = -1;
-        col = -1;
         checkRows();
         if(board.makeMove(row,col,team) == false)
             checkColumns();
@@ -48,7 +44,7 @@ public class Computer extends Player
             checkDiagonals();
         if(board.makeMove(row,col,team) == false)
             checkDiagonals2();
-        if(board.makeMove(row,col,team) == false)
+        while(board.makeMove(row,col,team) == false)
             getSpaceEasy();
     }
 
