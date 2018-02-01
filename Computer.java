@@ -1,4 +1,3 @@
- 
 
 /**
  * Write a description of class computer here.
@@ -9,82 +8,113 @@
 public class Computer extends Player
 {
     int row, col, team, o, spot;
-    public Computer(int t){
+    public Computer(int t, Board board1, int level){
         team = t;
+        if (t == 1)
+			teamstr = "one";
+		if (t == 2)
+			teamstr = "two";
+		board = board1;
     }
-
-    public void getSpaceEasy(int[][] asd){
+    @Override public void TakeTurn() {
+    	//this should check for if computer is set to easy or hard and then takes a turn. 
+    }
+    public void getSpaceEasy(int[][] asd){ //I don't think that you need to call the board each time because in board.makemove it uses the board itself. 
         row = -1;
         col = -1;
         do{
             row = (int)(3*Math.random());
             col = (int)(3*Math.random());    
-        } while(asd[row][col]!=0);
+        } while(asd[row][col]!=0); //board.makemove() now returns a boolean if it makes a move for you so you can use board.makemove to both check if a move is possible and make the move at the same time. 
     }
 
     public void getSpaceHard(int[][] asd){
-
         row = -1;
         col = -1;
         checkRows(asd);
-        if(row != -1 && col != -1)
+        if(row == -1 && col == -1)
             checkColumns(asd);
-
+        if(row == -1 && col == -1)
+            checkDiagonals(asd);
+        if(row == -1 && col == -1)
+            checkDiagonals2(asd);
+        if(row == -1 && col == -1)
+            getSpaceEasy(asd);
+        
     }
 
-    /*should check for any possible crosses though columns*/
+    /*should check for any possible crosses through columns*/
     public void checkColumns(int[][] asd){
         o = 0;
+        spot = -1;
         for(int i = 0; i<=2;i++)
             for(int c = 0;c<=2;c++){
-                if(asd[i][c] == 1)
+                if(asd[i][c] == 1){
                     o += 1;
-                if(o == 2){
-                    o = i;
+                } else if(asd[i][c] == 0)
+                    spot = c;
+                if(o == 2 && spot != -1){
+                    row = i;
+                    col = spot;
                     c = 2;
                     i = 2;
                 }
-            }
-        for(int x=0;x<=2;x++)
-            if(asd[o][x] == 0){
-                row = o;
-                col = x;
             }
     }
 
-    /*should check for any possible crosses though rows*/
+    /*should check for any possible crosses through rows*/
     public void checkRows(int[][] asd){
         o = 0;
+        spot = -1;
         for(int c = 0; c<=2;c++)
             for(int i = 0;i<=2;i++){
-                if(asd[i][c] == 1)
+                if(asd[i][c] == 1){
                     o += 1;
-                if(o == 2){
-                    o = c;
+                } else if(asd[i][c] == 0)
+                    spot = c;
+                if(o == 2 && spot != -1){
+                    row = spot;
+                    col = c;
                     c = 2;
                     i = 2;
                 }
             }
-        for(int x=0;x<=2;x++)
-            if(asd[x][o] == 0){
-                row = x;
-                col = o;
-            }
     }
-    
+
     public void checkDiagonals(int[][] asd){
         o = 0;
-        spot = 0;
+        spot = -1;
         for(int c = 0; c<=2;c++)
             for(int i = 2;i>=0;i++){
                 if(asd[i][c] == 1){
                     o += 1;
                 } else if(asd[i][c] == 0)
-                if(o == 2){
-                    
+                    spot = i;
+                if(o == 2 && spot != -1){
+                    row = i;
+                    col = c;
+                    c = 2;
+                    i = 0;
                 }
             }
-        
+    }
+    
+     public void checkDiagonals2(int[][] asd){
+        o = 0;
+        spot = -1;
+        for(int i = 0; i<=2;i++)
+            for(int c = 2;c>=0;c++){
+                if(asd[i][c] == 1){
+                    o += 1;
+                } else if(asd[i][c] == 0)
+                    spot = i;
+                if(o == 2 && spot != -1){
+                    row = i;
+                    col = c;
+                    c = 0;
+                    i = 2;
+                }
+            }
     }
 
     public int getX(){

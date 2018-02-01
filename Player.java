@@ -7,10 +7,13 @@
 import java.util.*;
 
 public class Player {
-	private int team = 0;
-	private String teamstr = "";
+	public int team = 0;
+	public String teamstr = "";
 	private Scanner scan = new Scanner(System.in);
-	private Board board = new Board();
+	public Board board = new Board();
+
+	Player() {
+	}
 
 	Player(int t, Board board1) {// Sets up a player with a team.
 		team = t;
