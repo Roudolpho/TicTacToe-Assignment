@@ -11,6 +11,10 @@ public class Board {
 	/*
 	 * 0-Empty space 1-Represents X 2-Represents O
 	 */
+	/**
+	 * empty constructor
+	 *
+	 */
 	Board() {
 
 	}
@@ -66,4 +70,3 @@ public class Board {
 		return temp;
 	}
 }
-	
