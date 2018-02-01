@@ -35,12 +35,25 @@ public class Board {
         return false;
     }
 
-    public void makeMove(int x, int y, int team) {
-        if ((team == 1 || team == 2) && board[y][x] == 0)
+    public boolean makeMove(int x, int y, int team) {
+        if ((team == 1 || team == 2) && board[y][x] == 0) {
             board[y][x] = team;
+            return true;
+        }
+        return false;
     }
-
-    public void resetBoard() {
+    
+    public boolean checkMove(int x, int y) {
+        if (board[y][x] == 0) 
+            return true;
+        return false;
+    }
+    
+    public int getSpace(int x, int y) {
+        return board[y][x];
+    }
+    
+    public void resetBoard() {//resets the board
         for (int x = 0; x < board.length; x++) {
             for (int y = 0; y < board[x].length; y++) {
                 board[y][x] = 0;
@@ -49,6 +62,7 @@ public class Board {
     }
     
     public String toString() {// This needs to display the board IDK how. Graphics? Special Print way?  
-        return board.toString();
+        String temp = "\t"+board[0][0]+"\t"+board[0][1]+"\t"+board[0][2]+"\t\n\t"+board[1][0]+"\t"+board[1][1]+"\t"+board[1][2]+"\t\n\t"+board[2][0]+"\t"+board[2][1]+"\t"+board[2][2];
+        return temp;
     }
 }
