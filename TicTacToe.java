@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 public class TicTacToe {
 	public static void main(String args[]) {
 		Scanner scan = new Scanner(System.in);
-		JFrame screen = new Visuals();
+		Visuals screen = new Visuals();
 		Board board = new Board();
 		
 		screen.setUpTicTacToe();
