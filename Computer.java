@@ -16,7 +16,6 @@ public class Computer extends Player
         if (t == 2)
             teamstr = "two";
         board = board1;
-        b = board.getBoard();
         l = level;
     }
 
@@ -54,9 +53,9 @@ public class Computer extends Player
         spot = -1;
         for(int i = 0; i<=2;i++)
             for(int c = 0;c<=2;c++){
-                if(b[i][c] == 1){
+                if(board.getBoard()[i][c] == 1){
                     o += 1;
-                } else if(b[i][c] == 0)
+                } else if(board.getBoard()[i][c] == 0)
                     spot = c;
                 if(o == 2 && spot != -1){
                     row = i;
@@ -73,9 +72,9 @@ public class Computer extends Player
         spot = -1;
         for(int c = 0; c<=2;c++)
             for(int i = 0;i<=2;i++){
-                if(b[i][c] == 1){
+                if(board.getBoard()[i][c] == 1){
                     o += 1;
-                } else if(b[i][c] == 0)
+                } else if(board.getBoard()[i][c] == 0)
                     spot = c;
                 if(o == 2 && spot != -1){
                     row = spot;
@@ -91,9 +90,9 @@ public class Computer extends Player
         spot = -1;
         for(int c = 0; c<=2;c++)
             for(int i = 2;i>=0;i++){
-                if(b[i][c] == 1){
+                if(board.getBoard()[i][c] == 1){
                     o += 1;
-                } else if(b[i][c] == 0)
+                } else if(board.getBoard()[i][c] == 0)
                     spot = i;
                 if(o == 2 && spot != -1){
                     row = i;
@@ -109,9 +108,9 @@ public class Computer extends Player
         spot = -1;
         for(int i = 0; i<=2;i++)
             for(int c = 2;c>=0;c++){
-                if(b[i][c] == 1){
+                if(board.getBoard()[i][c] == 1){
                     o += 1;
-                } else if(b[i][c] == 0)
+                } else if(board.getBoard()[i][c] == 0)
                     spot = i;
                 if(o == 2 && spot != -1){
                     row = i;
