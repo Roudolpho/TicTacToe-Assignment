@@ -7,6 +7,7 @@ comment10.params=
 comment10.target=int\ getY()
 comment2.params=
 comment2.target=void\ TakeTurn()
+<<<<<<< HEAD
 comment3.params=
 comment3.target=void\ getSpaceEasy()
 comment4.params=
@@ -21,6 +22,22 @@ comment7.params=
 comment7.target=void\ checkDiagonals()
 comment8.params=
 comment8.target=void\ checkDiagonals2()
+=======
+comment3.params=asd
+comment3.target=void\ getSpaceEasy(int[][])
+comment4.params=asd
+comment4.target=void\ getSpaceHard(int[][])
+comment5.params=asd
+comment5.target=void\ checkColumns(int[][])
+comment5.text=should\ check\ for\ any\ possible\ crosses\ through\ columns
+comment6.params=asd
+comment6.target=void\ checkRows(int[][])
+comment6.text=should\ check\ for\ any\ possible\ crosses\ through\ rows
+comment7.params=asd
+comment7.target=void\ checkDiagonals(int[][])
+comment8.params=asd
+comment8.target=void\ checkDiagonals2(int[][])
+>>>>>>> ab9f045685ae9d760667eeae3d5802d9ee8d25c7
 comment9.params=
 comment9.target=int\ getX()
 numComments=11
