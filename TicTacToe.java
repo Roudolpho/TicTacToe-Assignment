@@ -42,8 +42,15 @@ public class TicTacToe {
 				winningTeam = 2;
 			}
 		}
+<<<<<<< HEAD
+		
+		
+		
+=======
 
 		System.out.println("Team " + winningTeam + " won");
 		scan.close();
+>>>>>>> 646eed33b3a14c556ff2980f29e1c207c2e5810d
 	}
 }
+

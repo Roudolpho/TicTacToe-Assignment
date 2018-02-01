@@ -10,8 +10,20 @@ comment3.params=
 comment3.target=boolean\ checkVictory()
 comment4.params=x\ y\ team
 comment4.target=boolean\ makeMove(int,\ int,\ int)
+<<<<<<< HEAD
 comment5.params=
 comment5.target=void\ resetBoard()
 comment6.params=
 comment6.target=java.lang.String\ toString()
 numComments=7
+=======
+comment5.params=x\ y
+comment5.target=boolean\ checkMove(int,\ int)
+comment6.params=x\ y
+comment6.target=int\ getSpace(int,\ int)
+comment7.params=
+comment7.target=void\ resetBoard()
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9
+>>>>>>> dbf5b0245232bb9d5c764eb5e1d5ed81d35bac73
