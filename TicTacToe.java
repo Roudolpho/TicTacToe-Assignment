@@ -35,7 +35,9 @@ public class TicTacToe {
 				win = true;
 				winningTeam = 1;
 			} else {
-				System.out.print(board.toString());
+				if(player2.team == 1){
+					System.out.print(board.toString());
+				}
 				player2.TakeTurn();
 				if (board.checkVictory()) {
 					win = true;

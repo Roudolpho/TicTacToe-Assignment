@@ -24,15 +24,15 @@ public class Computer extends Player
         //this should check for if computer is set to easy or hard and then takes a turn. 
         switch(l)
         {
-            case 1: getSpaceEasy();
-            case 2: getSpaceHard();
+            case 1: getSpaceEasy();break;
+            case 2: getSpaceHard();break;
         }
     }
 
     public void getSpaceEasy(){ //I don't think that you need to call the board each time because in board.makemove it uses the board itself. 
         do{
-            row = (int)(3*Math.random());
-            col = (int)(3*Math.random());    
+            row = (int)(2*Math.random());
+            col = (int)(2*Math.random());    
         } while(board.makeMove(row,col,team) == false); //board.makemove() now returns a boolean if it makes a move for you so you can use board.makemove to both check if a move is possible and make the move at the same time. 
     }
 
