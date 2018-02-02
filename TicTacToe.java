@@ -29,15 +29,11 @@ public class TicTacToe {
 		boolean win = false;
 		int winningTeam = 0;
 		while (win == false) {// print board then do player1's turn then computer's or player2's
-			System.out.print(board.toString());
 			player1.TakeTurn();
 			if (board.checkVictory()) {
 				win = true;
 				winningTeam = 1;
-			} else {
-				if(player2.team == 1){
-					System.out.print(board.toString());
-				}
+			} else { 
 				player2.TakeTurn();
 				if (board.checkVictory()) {
 					win = true;

@@ -11,6 +11,7 @@ public class Player {
 	public String teamstr = "";
 	private Scanner scan = new Scanner(System.in);
 	public Board board = new Board();
+	public boolean comp = false;;
 
 	Player() {
 	}
@@ -25,12 +26,19 @@ public class Player {
 	}
 
 	public void TakeTurn() {// Takes a player's turn.
+		int x = -1 ;
+		int y = -1 ; 
+		System.out.println(board.toString());
+		while(false == board.makeMove(x, y, team)) {
 		System.out.println("It is player " + teamstr + "'s turn.");
 		System.out.println("Please input board coordinates as integers, x first then y");
-		int x = scan.nextInt() - 1;
-		int y = scan.nextInt() - 1;
-
-		board.makeMove(x, y, team);
+		x = scan.nextInt() - 1;
+		y = scan.nextInt() - 1;
+		}
+		
+	}
+	public boolean getCompStatus() {
+		return comp;
 	}
 
 }

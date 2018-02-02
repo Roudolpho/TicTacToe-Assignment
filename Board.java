@@ -39,6 +39,8 @@ public class Board {
 	}
 
 	public boolean makeMove(int x, int y, int team) {
+		if(x == -1 || y == -1)
+			return false;
 		if ((team == 1 || team == 2) && board[y][x] == 0) {
 			board[y][x] = team;
 			return true;
@@ -66,7 +68,7 @@ public class Board {
 
 	public String toString() {// This needs to display the board IDK how. Graphics? Special Print way?
 		String temp = "\t" + board[0][0] + "\t" + board[0][1] + "\t" + board[0][2] + "\t\n\t" + board[1][0] + "\t"
-				+ board[1][1] + "\t" + board[1][2] + "\t\n\t" + board[2][0] + "\t" + board[2][1] + "\t" + board[2][2];
+				+ board[1][1] + "\t" + board[1][2] + "\t\n\t" + board[2][0] + "\t" + board[2][1] + "\t" + board[2][2] + "\n";
 		return temp;
 	}
 }
