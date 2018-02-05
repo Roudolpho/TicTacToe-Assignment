@@ -6,4 +6,6 @@ comment2.params=t\ board1
 comment2.target=Player(int,\ Board)
 comment3.params=
 comment3.target=void\ TakeTurn()
-numComments=4
+comment4.params=
+comment4.target=boolean\ getCompStatus()
+numComments=5
