@@ -112,7 +112,7 @@ public class Computer extends Player {
         }
 
     }
-
+    //
     public void checkDiagonals() {
         o = 0;
         spot = -1;
