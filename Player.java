@@ -35,6 +35,7 @@ public class Player {
 		x = scan.nextInt() - 1;
 		y = scan.nextInt() - 1;
 		}
+		board.rotateBoard();
 		
 	}
 	public boolean getCompStatus() {

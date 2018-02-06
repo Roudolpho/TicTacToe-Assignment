@@ -23,8 +23,10 @@ public class TicTacToe {
 			System.out.println("What level of the computer ar you playeing easy(1) or hard(2)");
 			int lvl = scan.nextInt();
 			player2 = new Computer(2, board, lvl);
-		} else {
+		} else if(str.toLowerCase().equals("no")) {
 			player2 = new Player(2, board);
+		} else {
+			
 		}
 		boolean win = false;
 		int winningTeam = 0;
@@ -41,7 +43,7 @@ public class TicTacToe {
 				}
 			}
 		}
-
+		System.out.println(board.toString());
 		System.out.println("Team " + winningTeam + " won");
 		scan.close();
 	}
