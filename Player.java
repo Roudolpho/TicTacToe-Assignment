@@ -2,7 +2,7 @@
 /**
  * This Class is the class that makes a player.
  *
- * @author Stephen, Ryan, and Chris Created Jan 29, 2018.
+ * @author Stephen Armstrong Created Jan 29, 2018.
  */
 import java.util.*;
 
@@ -35,7 +35,9 @@ public class Player {
 		x = scan.nextInt() - 1;
 		y = scan.nextInt() - 1;
 		}
+		System.out.println(board.toString());
 		board.rotateBoard();
+		board.scramble();
 		
 	}
 	public boolean getCompStatus() {

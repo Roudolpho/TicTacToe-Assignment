@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class computer here.
+ * This is the class that is the automated opponent
+ * It Extends the player class
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Chris Phan
+ * @version 2/6/18
  */
 public class Computer extends Player {
     int row, col, team, o, spot, l, v;
@@ -33,6 +34,7 @@ public class Computer extends Player {
             getSpaceHard();
             break;
         }
+        board.rotateBoard();
     }
 
     public void getSpaceEasy() { // I don't think that you need to call the board each time because in
