@@ -10,10 +10,8 @@ import java.util.*;
 public class TicTacToe {
 	public static void main(String args[]) {
 		Scanner scan = new Scanner(System.in);
-		Visuals screen = new Visuals();
 		Board board = new Board();
 
-		screen.setUpTicTacToe();
 
 		System.out.println("Are you playing the computer \"yes\" or \"no\"");
 		String str = scan.nextLine();
@@ -35,7 +33,7 @@ public class TicTacToe {
 			if (board.checkVictory()) {
 				win = true;
 				winningTeam = 1;
-			} else {
+			} else { 
 				player2.TakeTurn();
 				if (board.checkVictory()) {
 					win = true;

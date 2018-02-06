@@ -3,20 +3,13 @@ comment0.target=Board
 comment0.text=\r\n\ Board\r\n\r\n\ @author\ Ryan\ Druffel\r\n\ @version\ 0.0.0.1\r\n
 comment1.params=
 comment1.target=Board()
-comment1.text=\r\n\ 0-Empty\ space\ 1-Represents\ X\ 2-Represents\ O\r\n
+comment1.text=\r\n\ empty\ constructor\r\n\r\n
 comment2.params=
 comment2.target=int[][]\ getBoard()
 comment3.params=
 comment3.target=boolean\ checkVictory()
 comment4.params=x\ y\ team
 comment4.target=boolean\ makeMove(int,\ int,\ int)
-<<<<<<< HEAD
-comment5.params=
-comment5.target=void\ resetBoard()
-comment6.params=
-comment6.target=java.lang.String\ toString()
-numComments=7
-=======
 comment5.params=x\ y
 comment5.target=boolean\ checkMove(int,\ int)
 comment6.params=x\ y
@@ -26,4 +19,3 @@ comment7.target=void\ resetBoard()
 comment8.params=
 comment8.target=java.lang.String\ toString()
 numComments=9
->>>>>>> dbf5b0245232bb9d5c764eb5e1d5ed81d35bac73
