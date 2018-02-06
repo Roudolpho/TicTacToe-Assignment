@@ -51,22 +51,16 @@ public class Computer extends Player {
         checkRows();
         if (row  == -1) {
             checkColumns();
-            System.out.println("1");
-            System.out.println(board.toString());
         }
         if (row  == -1) {
             checkDiagonals();
-            System.out.println("2");
-            System.out.println(board.toString());
         }
         if (row  == -1) {
             checkDiagonals2();
-            System.out.println("3");
-            System.out.println(board.toString());
         }
-        if(row  == -1)
+        if(row  == -1){
             getSpaceEasy();
-        System.out.print(col + " " + row);
+        }
     }
 
     /* should check for any possible crosses through columns */
@@ -103,7 +97,6 @@ public class Computer extends Player {
                 if (o == 2 && spot != -1) {
                     row = spot;
                     col = c;
-                    System.out.println(i + " " + spot);
                     i = 3;
                     c = 3;
                     board.makeMove(col, row, team);
@@ -156,13 +149,5 @@ public class Computer extends Player {
                 board.makeMove(col, row, team);
             }
         }
-    }
-
-    public int getX() {
-        return row;
-    }
-
-    public int getY() {
-        return col;
     }
 }
