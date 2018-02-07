@@ -84,21 +84,35 @@ public class Board {
 			}
 		}
 	}
+
 	public void scramble() {
 		int[][] temp = new int[3][3];
-		for(int i =0; i < 3; i++) {
-			for(int j = 0; j <3; j ++) {
-				temp[i][j] = board[(int)(3*Math.random())][(int)(3*Math.random())];
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				temp[i][j] = board[(int) (3 * Math.random())][(int) (3 * Math.random())];
 			}
 		}
 		board = temp;
 	}
-	
-	
+
 	public String toString() {// This needs to display the board IDK how. Graphics? Special Print way?
-		String temp = "\t" + board[0][0] + "\t" + board[0][1] + "\t" + board[0][2] + "\t\n\t" + board[1][0] + "\t"
-				+ board[1][1] + "\t" + board[1][2] + "\t\n\t" + board[2][0] + "\t" + board[2][1] + "\t" + board[2][2]
-				+ "\n";
+		char[][] board1 = new char[3][3];
+
+		for (int j = 0; j < board.length; j++) {
+			for (int i = 0; i < board[j].length; i++) {
+				if (board[i][j] == 0) {
+					board1[i][j] = ' ';
+				} else if (board[i][j] == 1) {
+					board1[i][j] = 'X';
+				} else if (board[i][j] == 2) {
+					board1[i][j] = 'O';
+				}
+
+			}
+		}
+		String temp = "\t[" + board1[0][0] + "]\t[" + board1[0][1] + "]\t[" + board1[0][2] + "]\t\n\t[" + board1[1][0] + "]\t["
+				+ board1[1][1] + "]\t[" + board1[1][2] + "]\t\n\t[" + board1[2][0] + "]\t[" + board1[2][1] + "]\t["
+				+ board1[2][2] + "]\n";
 		return temp;
 	}
 }
