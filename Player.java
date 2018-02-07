@@ -37,7 +37,7 @@ public class Player {
 		}
 		System.out.println(board.toString());
 		board.rotateBoard();
-		board.scramble();
+		//board.scramble();
 		
 	}
 	public boolean getCompStatus() {
